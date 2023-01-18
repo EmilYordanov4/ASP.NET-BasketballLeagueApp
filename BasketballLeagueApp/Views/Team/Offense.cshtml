@@ -1,0 +1,29 @@
+﻿@model List<TopTeamServiceModel>
+
+@{
+    ViewData["Title"] = "Top 5 Offensive";
+}
+
+<h1 style="text-align:center; margin-bottom:2%">Top 5 Offesive Teams</h1>
+
+<table class="table table-striped text-box">
+    <thead class="thead-dark">
+        <tr>
+            <th class="font-settings" style="text-align:center">Logo</th>
+            <th class="font-settings" style="text-align:center">Name</th>
+            <th class="font-settings" style="text-align:center">Total score </th>
+            <th class="font-settings" style="text-align:center"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var team in Model)
+        {
+            <tr>
+                <td scope="col" style="width:100px; height:100px; vertical-align:middle"><img src="@team.TeamImage" class="card-img-top"></td>
+                <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">@team.Name</td>
+                <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">@team.Score</td>
+                <td style="vertical-align:middle"> <a class="navbar-brand btn-settings btn float-right ml-3" style="color: black" asp-controller="Team" asp-action="Details" asp-route-teamId="@team.Id">Details</a> </td>
+            </tr>
+        }
+    </tbody>
+</table>

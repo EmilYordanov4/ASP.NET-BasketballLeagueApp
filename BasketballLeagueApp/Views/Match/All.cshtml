@@ -1,0 +1,35 @@
+﻿@model List<MatchesServiceModel>
+
+@{
+    ViewData["Title"] = "All Matches";
+}
+
+<h1 style="text-align:center; margin-bottom:2%">Matches</h1>
+
+<table class="table table-striped text-box">
+    <thead class="thead-dark">
+        <tr>
+            <th class="font-settings" style="text-align:center"> </th>
+            <th class="font-settings" style="text-align:center">Home team</th>
+            <th class="font-settings" style="text-align:center"></th>
+            <th class="font-settings" style="text-align:center">Away team</th>
+            <th class="font-settings" style="text-align:center"></th>
+            <th class="font-settings" style="text-align:center">Score</th>
+            <th class="font-settings" style="text-align:center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var match in Model)
+        {
+            <tr>
+                <td scope="col" style="width:10%; height:10%; vertical-align:middle"><img src="@match.HomeTeamImage" class="card-img-top"></td>
+                <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">@match.HomeTeamName</td>
+                <td scope="col" style="width:10%; height:10; vertical-align:middle"><img src="@match.AwayTeamImage" class="card-img-top"></td>
+                <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">@match.AwayTeamName</td>
+                <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">@match.HomeTeamScore</td>
+                <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">:</td>
+                <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">@match.AwayTeamScore</td>
+            </tr>
+        }
+    </tbody>
+</table>

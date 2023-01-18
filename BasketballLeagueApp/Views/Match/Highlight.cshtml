@@ -1,0 +1,33 @@
+﻿@model MatchesServiceModel
+
+@{
+    ViewData["Title"] = "Highlight Match";
+}
+
+<h1 style="text-align:center; margin-bottom:2%">Highlight Match</h1>
+
+<table class="table table-striped text-box">
+    @*<thead class="thead-dark">
+        <tr>
+            <th class="font-settings" style="text-align:center"> </th>
+            <th class="font-settings" style="text-align:center">Home team</th>
+            <th class="font-settings" style="text-align:center"></th>
+            <th class="font-settings" style="text-align:center">Away team</th>
+            <th class="font-settings" style="text-align:center"></th>
+            <th class="font-settings" style="text-align:center">Score</th>
+            <th class="font-settings" style="text-align:center"></th>
+        </tr>
+    </thead>*@
+    <tbody>
+        
+            <tr>
+                <td scope="col" style="width:10%; height:10%; vertical-align:middle"><img src="@Model.HomeTeamImage" class="card-img-top"></td>
+            <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">@Model.HomeTeamName</td>
+            <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">@Model.HomeTeamScore</td>
+            <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">:</td>
+            <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">@Model.AwayTeamScore</td>
+            <td class="" style="vertical-align:middle; text-align:center; font-weight:bold; color:white; font-size:25px">@Model.AwayTeamName</td>
+            <td scope="col" style="width:10%; height:10; vertical-align:middle"><img src="@Model.AwayTeamImage" class="card-img-top"></td>
+            </tr>
+    </tbody>
+</table>

@@ -1,0 +1,43 @@
+﻿@model AllTeamsQueryServiceModel
+
+@{
+	ViewData["Title"] = "Teams";
+}
+
+<h1 style="text-align:center; margin-bottom:2%">Teams</h1>
+
+<form method="get">
+	<div class="row">
+		<div class="form-group col-md-4 filterText">
+			<label asp-for="SearchTerm"></label>
+			<input asp-for="SearchTerm" class="form-control" placeholder="Enter team name...">
+		</div>
+		<div class="form-group col-md-4 filterText">
+			<div class="form-group">
+				<label asp-for="Sorting"></label>
+				<select asp-for="Sorting" class="form-control">
+					<option value="0" selected>Matches</option>
+					<option value="1">Wins</option>
+					<option value="2">Loses</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group col-md-1 centerButton">
+			<input type="submit" class="navbar-brand btn-settings btn" value="Search">
+		</div>
+	</div>
+</form>
+
+<div class="row">
+	@foreach (var team in Model.Teams)
+	{
+		<div class="form-group allTeams col-lg-3">
+			<img src="@team.TeamImage" class="allTeamsImage">
+			<h5 align="center" style="font-weight:bold;">@team.Name</h5>
+			<p align="center" style="font-weight:bold;">Matches: @team.Matches</p>
+			<p style="font-weight:bold;">Wins: @team.Wins</p>
+			<p style="font-weight:bold;">Loses: @team.Loses</p>
+			<a class="navbar-brand btn-settings btn float-left" style="color: black" asp-controller="Team" asp-action="Details" asp-route-teamId="@team.Id">Details</a>
+		</div>
+	}
+</div>

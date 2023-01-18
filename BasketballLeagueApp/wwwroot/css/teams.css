@@ -1,0 +1,46 @@
+﻿.allTeams {
+    border: solid;
+    border-color: black;
+/*    background-color: ;
+*/    opacity:0.8;
+    vertical-align: bottom;
+    width: 100%;
+    height: 450px;
+}
+
+@media screen and (max-width:1200px) {
+    .allTeams {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .allTeams {
+        width: 50%;
+        height: 400px;
+    }
+}
+
+.allTeamsImage {
+    margin-top: 15px;
+    width: 100%;
+    height: 50%;
+}
+
+@media screen and (max-width:1200px) {
+    .allTeamsImage {
+        height: 30%;
+    }
+}
+
+matchText {
+    font:bold;
+}
+
+.centerButton {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: 12px;
+}
