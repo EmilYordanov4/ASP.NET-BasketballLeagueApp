@@ -8,6 +8,8 @@
 - Customizable amount of matches randomly generated (the amount can be changed from the code).
 Generated automatically at the first start of the application.
 
+**Functionality:**
+<br />
 1. List of Teams, which can be both sortable and searchable.
 2. Match results in the form as showed in the task.
 3. Top 5 offensive teams. (calculated automatically)
